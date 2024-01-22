@@ -20,10 +20,6 @@ public class StudentController {
 		this.studentService = studentService;
 	}
 	
-	@GetMapping("/SmsLogin")
-	public String loginHandeler() {
-		return "login";
-	}
 	
 	@GetMapping("/students")
 	public String listStudents(Model model) {
