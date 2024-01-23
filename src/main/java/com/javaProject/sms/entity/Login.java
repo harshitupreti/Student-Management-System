@@ -21,7 +21,7 @@ private String username;
 @Column(name = "password", nullable = false)
 private String password;
 
-@Column(name = "email_id", nullable = false)
+@Column(name = "email_id")
 private String emailId;
 
  public Login() {

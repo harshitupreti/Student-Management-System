@@ -1,7 +1,5 @@
 package com.javaProject.sms.service.impl;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.javaProject.sms.entity.Login;
@@ -19,11 +17,18 @@ public class LoginServiceImpl implements LoginService {
 	}
 
 	@Override
-	public List<Login> getLoginDetails(Login login) {
+	public Login getLoginDetails(String username, String password) {
 		
-		return loginRepository.findByUsername(login.getUsername());
+		Login user = loginRepository.findByUsernameAndPassword(username, password);
+		return user;
 		
 		
+	}
+
+	@Override
+	public Login saveNewRegistration(Login register) {
+		
+		return loginRepository.save(register);
 	}
 
 }
